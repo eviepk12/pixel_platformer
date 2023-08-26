@@ -3,9 +3,10 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "assets/tiles/level-00.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "assets/tiles/Pixe Platformer.tsx": {
             "scaleInDock": 1,
@@ -18,7 +19,7 @@
             "scale": 1.2,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 321.25000000000006,
+                "x": 322.08333333333337,
                 "y": 308.33333333333337
             }
         }
@@ -30,13 +31,11 @@
     "map.tileWidth": 16,
     "map.width": 40,
     "openFiles": [
-        "assets/tiles/Pixe Platformer.tsx",
-        "assets/tiles/level-00.tmx"
     ],
-    "project": "untitled.tiled-project",
+    "project": "Pixel Platformer.tiled-project",
     "recentFiles": [
-        "assets/tiles/Pixe Platformer.tsx",
-        "assets/tiles/level-00.tmx"
+        "assets/tiles/level-00.tmx",
+        "assets/tiles/Pixe Platformer.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

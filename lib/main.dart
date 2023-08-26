@@ -12,4 +12,3 @@ void main() {
   PixelPlatformer game = PixelPlatformer();
   runApp(GameWidget(game: kDebugMode ? PixelPlatformer() : game));
 }
-// test
