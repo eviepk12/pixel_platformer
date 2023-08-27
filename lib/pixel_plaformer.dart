@@ -5,8 +5,8 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/widgets.dart';
-import 'package:pixel_platformer/actors/player.dart';
-import 'package:pixel_platformer/levels/level.dart';
+import 'package:pixel_platformer/components/player.dart';
+import 'package:pixel_platformer/components/level.dart';
 
 class PixelPlatformer extends FlameGame
     with HasKeyboardHandlerComponents, DragCallbacks {
@@ -60,13 +60,13 @@ class PixelPlatformer extends FlameGame
   void updateJoystick() {
     switch (joystick.direction) {
       case JoystickDirection.left || JoystickDirection.upLeft || JoystickDirection.downLeft:
-        player.playerDirection = PlayerDirection.left;
+        // player.playerDirection = PlayerDirection.left;
         break;
       case JoystickDirection.right || JoystickDirection.upRight || JoystickDirection.downRight:
-        player.playerDirection = PlayerDirection.right;
+        // player.playerDirection = PlayerDirection.right;
         break;
       default:
-        player.playerDirection = PlayerDirection.none;
+        // player.playerDirection = PlayerDirection.none;
     }
   }
 }
