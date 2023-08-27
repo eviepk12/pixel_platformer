@@ -12,3 +12,5 @@ void main() async{
   PixelPlatformer game = PixelPlatformer();
   runApp(GameWidget(game: kDebugMode ? PixelPlatformer() : game));
 }
+
+//test
