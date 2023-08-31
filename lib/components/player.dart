@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flame/game.dart';
-import 'package:flutter/src/services/keyboard_key.g.dart';
 import 'package:flutter/src/services/raw_keyboard.dart';
 import 'package:pixel_platformer/components/collision_block.dart';
 import 'package:pixel_platformer/components/player_hitbox.dart';
@@ -24,7 +22,7 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation jumpingAnimation;
 
   final double _gravity = 9.8;
-  final double _jumpForce = 250;
+  final double _jumpForce = 230;
   final double _terminalVelocity = 300;
   double horizontalMovement = 0;
   double moveSpeed = 100;
@@ -38,7 +36,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimation();
-    // debugMode = true;
+    debugMode = true;
     add(RectangleHitbox(
         position: Vector2(hitbox.offsetX, hitbox.offsetY),
         size: Vector2(hitbox.width, hitbox.height)));
@@ -68,7 +66,7 @@ class Player extends SpriteAnimationGroupComponent
     horizontalMovement += isRightKeyPressed ? 1 : 0;
 
     hasJumped = keysPressed.contains(LogicalKeyboardKey.space) ||
-        keysPressed.contains(LogicalKeyboardKey.arrowUp);
+        keysPressed.contains(LogicalKeyboardKey.arrowUp) || keysPressed.contains(LogicalKeyboardKey.keyW);
 
     return super.onKeyEvent(event, keysPressed);
   }
@@ -152,12 +150,12 @@ class Player extends SpriteAnimationGroupComponent
         if (checkCollision(this, block)) {
           if (velocity.x > 0) {
             velocity.x = 0;
-            position.x = block.x - hitbox.offsetX - width;
+            position.x = block.x - hitbox.offsetX - hitbox.width;
             break;
           }
           if (velocity.x < 0) {
             velocity.x = 0;
-            position.x = block.x + block.width + hitbox.width + width;
+            position.x = block.x + block.width + hitbox.width + hitbox.offsetX;
             break;
           }
         }
